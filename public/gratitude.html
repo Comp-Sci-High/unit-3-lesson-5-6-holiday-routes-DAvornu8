@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Love Notes 💌</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="heart-container" class="hearts" aria-hidden="true"></div>
+  <header class="site-header">
+    <h1 class="logo">Love Notes</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/recipes">Date Night Ideas</a>
+      <a href="/gratitude" class="active">Love Notes</a>
+    </nav>
+    <div class="site-controls" role="group" aria-label="Site controls">
+      <button id="toggle-hearts" aria-pressed="true" title="Toggle heart rain">💞</button>
+      <button id="toggle-sound" aria-pressed="true" title="Toggle sound">🔔</button>
+      <div id="love-meter" aria-live="polite" title="Love meter"><span id="love-count">0</span> ❤️</div>
+    </div>
+
+
+
+
+
+  </header>
+
+  <main class="content">
+    <h2>Share something you love</h2>
+    <form id="gratitude-form">
+      <input id="note" type="text" placeholder="Share a love note..." aria-label="love note" required>
+      <button type="submit">Send Love</button>
+    </form>
+
+    <div id="wall" class="wall"></div>
+    <img src="assets/heart.svg" alt="heart" class="cornucopia" aria-hidden="true" data-parallax="0.04">
+
+    <section class="quiz">
+      <h3>Mini Quiz</h3>
+      <p>Answer to reveal a fun love fact!</p>
+      <div id="quiz">
+        <p>Which flower is most commonly associated with love?</p>
+        <button class="quiz-btn" data-answer="rose">Rose</button>
+        <button class="quiz-btn" data-answer="lily">Lily</button>
+        <button class="quiz-btn" data-answer="tulip">Tulip</button>
+      </div>
+      <p id="quizResult" class="hidden"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

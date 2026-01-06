@@ -1,11 +1,72 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Express Static</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>Hello from Express</h1>
-    <p>This file is being served!</p>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Valentine's Day — Share the Love 💖</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="heart-container" class="hearts" aria-hidden="true"></div>
+  <header class="site-header">
+    <h1 class="logo">Valentine's Day 💘</h1>
+    <nav>
+      <a href="/" class="active">Home</a>
+      <a href="/recipes">Date Night Ideas</a>
+      <a href="/gratitude">Love Notes</a>
+    </nav>
+    <div class="site-controls" role="group" aria-label="Site controls">
+      <button id="toggle-hearts" aria-pressed="true" title="Toggle heart rain">💞</button>
+      <button id="toggle-sound" aria-pressed="true" title="Toggle sound">🔔</button>
+      <div id="love-meter" aria-live="polite" title="Love meter"><span id="love-count">0</span> ❤️</div>
+    </div>
+
+
+
+
+
+
+  </header>
+
+  <main class="hero">
+    <div class="hero-left">
+      <h2>Spread Joy & Love.</h2>
+      <p>Discover sweet recipes, leave a love note, and try a cheerful quiz!</p>
+      <div class="cta-row">
+        <a class="btn" href="/recipes">Get Sweet Ideas</a>
+        <a class="btn outline" href="/gratitude">Share Love</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <!-- Decorative heart (SVG asset) -->
+      <img src="assets/heart.svg" alt="heart" class="heart-icon" data-parallax="0.06">
+      <img src="https://www.animatedimages.org/data/media/373/animated-heart-image-0886.gif" alt="animated heart" class="animated-heart">
+
+      <div class="hearts" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <section class="features" aria-label="Features">
+    <a class="feature" href="/recipes" role="link">
+      <h3>Interactive Recipes</h3>
+      <p>Click to generate a warm side dish idea and see step-by-step tips.</p>
+    </a>
+    <a class="feature" href="/gratitude" role="link">
+      <h3>Gratitude Wall</h3>
+      <p>Share something youre thankful for — watch it appear with a confetti burst.</p>
+    </a>
+    <a class="feature" href="/quiz" role="link">
+      <h3>Short Quiz</h3>
+      <p>Try the mini quiz to learn a fun love fact about traditions.</p>
+    </a>
+  </section>
+
+  <footer class="site-footer">
+    <p>Made with ❤️ — Happy Valentine's Day!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

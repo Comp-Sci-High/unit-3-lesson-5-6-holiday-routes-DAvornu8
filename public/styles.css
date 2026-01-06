@@ -1,0 +1,133 @@
+/* Valentine's Day themed styles with pink/rose palette */
+:root{
+  --bg:#fff0f6;
+  --brand:#9f1239; /* deep rose */
+  --accent:#ff6b9f; /* bright pink */
+  --muted:#4b1220;
+  --rose:#e11d48;
+  --light:#fff6f9;
+  --glass: rgba(255,255,255,0.6);
+}
+
+/* animated gradient background */
+body::before{
+  content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(120deg,#fff0f6 0%, #ffeef8 35%, #fff 100%);background-size:300% 300%;animation: gradientShift 18s ease infinite;opacity:0.95}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+*{box-sizing:border-box}
+body{font-family: 'Poppins', system-ui, Arial, sans-serif;margin:0;background:linear-gradient(180deg,var(--bg),var(--light));color:var(--muted)}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:rgba(255,255,255,0.6);backdrop-filter:blur(4px);}
+.logo{margin:0;color:var(--brand);font-weight:700}
+nav a{margin-left:1rem;text-decoration:none;color:var(--muted);padding:.3rem .6rem;border-radius:6px}
+nav a.active,nav a:hover{background:linear-gradient(90deg, #FFDAB9, #FFE4B5);color:var(--brand)}
+.hero{display:flex;gap:2rem;padding:3rem;align-items:center}
+.hero-left h2{font-size:2rem;color:var(--brand);margin:0}
+.cta-row{margin-top:1rem}
+.btn{display:inline-block;background:var(--accent);color:white;padding:.5rem 1rem;border-radius:10px;text-decoration:none}
+.btn.outline{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.hero-right{position:relative;width:300px;height:220px}
+.heart-icon{position:absolute;left:8px;top:12px;width:84px;height:auto;transform-origin:center;animation:bob 5s ease-in-out infinite;filter:drop-shadow(0 8px 18px rgba(189,39,88,0.12))}
+.animated-heart{position:absolute;right:10px;top:20px;width:120px;height:auto;filter:drop-shadow(0 8px 18px rgba(189,39,88,0.12))}
+/* simple heart pulse */
+@keyframes bob{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-8px) scale(1.03)}100%{transform:translateY(0) scale(1)}}
+
+/* small decorative elements */
+.decor-heart{width:28px;height:auto;position:relative;left:6px;top:6px;opacity:0.95;animation:floatUp 6s ease-in-out infinite}
+.cornucopia{width:50px;height:auto;position:relative;opacity:0.8}
+@keyframes floatUp{0%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(6deg)}100%{transform:translateY(0) rotate(0deg)}}
+
+/* page background gradient animation */
+body{animation:bgShift 12s linear infinite}
+@keyframes bgShift{0%{background-position:0% 0%}50%{background-position:100% 50%}100%{background-position:0% 100%}}
+
+/* sparkles adjusted to pink palette */
+.sparkle{position:absolute;width:10px;height:10px;border-radius:50%;pointer-events:none;transform-origin:center;opacity:0}
+.sparkle.s1{background:var(--light)}
+.sparkle.s2{background:#ffd0e1}
+.sparkle.s3{background:var(--rose)}
+.sparkle.show{animation: sparklePop .7s ease-out forwards}
+@keyframes sparklePop{0%{transform:scale(.3) translateY(0);opacity:1}100%{transform:scale(1.2) translateY(-30px);opacity:0}}
+
+/* site controls */
+.site-controls{display:flex;gap:.6rem;align-items:center;margin-left:1rem}
+.site-controls button{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:.4rem .5rem;border-radius:8px;font-size:1.1rem;cursor:pointer}
+.site-controls button[aria-pressed="true"]{background:linear-gradient(90deg,var(--accent),var(--rose));color:white;border-color:transparent}
+#love-meter{font-weight:700;background:var(--glass);padding:.35rem .6rem;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+
+/* heart pop styles */
+.pop-heart{position:absolute;width:10px;height:10px;transform:rotate(-45deg);background:var(--rose);border-radius:4px;opacity:0.95;pointer-events:none}
+.pop-heart:before,.pop-heart:after{content:'';position:absolute;width:10px;height:10px;border-radius:50%;background:var(--rose)}
+.pop-heart:before{top:-5px;left:0}
+.pop-heart:after{left:5px;top:0}
+.pop-heart.pop{animation: popBurst .7s cubic-bezier(.2,.9,.2,1) forwards}
+@keyframes popBurst{0%{transform:translateY(0) scale(.6) rotate(-45deg);opacity:1}50%{transform:translateY(-20px) scale(1.05) rotate(-45deg);opacity:1}100%{transform:translateY(-60px) scale(.7) rotate(30deg);opacity:0}}
+
+/* note pop animation when adding to wall */
+@keyframes notePop{0%{transform:scale(.85);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1)} }
+.note.pop{animation: notePop .36s cubic-bezier(.2,.9,.25,1) forwards}
+
+/* respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  body::before, .hero .heart-icon, .animated-heart, .heart, .pop-heart, .sparkle, .confetti .p{animation:none !important;transition:none !important}
+}
+
+/* interactive button glow */
+#generate:hover{box-shadow:0 6px 20px rgba(217,119,6,0.24);transform:translateY(-3px)}
+#gratitude-form button:hover{box-shadow:0 6px 20px rgba(225,29,72,0.18);transform:translateY(-3px)}
+.hearts{position:absolute;left:-10px;top:10px;width:100%;pointer-events:none}
+/* floating/diving hearts used for the decorative area */
+.heart{width:22px;height:22px;position:absolute;transform:rotate(-45deg);background:var(--rose);left:0;top:0;opacity:0.95;animation: fallHeart 6s linear infinite;border-radius:5px}
+.heart:before,.heart:after{content:'';position:absolute;width:22px;height:22px;border-radius:50%;background:var(--rose)}
+.heart:before{top:-11px;left:0}
+.heart:after{left:11px;top:0}
+@keyframes fallHeart{0%{transform:translateY(-10px) rotate(0deg) scale(.9);opacity:1}100%{transform:translateY(220px) rotate(360deg) scale(1.1);opacity:0}}
+.features{display:flex;gap:1rem;padding:2rem;border-top:1px solid rgba(0,0,0,0.04)}
+.features a{flex:1;background:rgba(255,255,255,0.8);padding:1rem;border-radius:8px;text-decoration:none;color:inherit;display:block;transition:transform .12s ease, box-shadow .12s ease;cursor:pointer}
+.features a:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+.features a:focus{outline:3px solid rgba(255,107,159,0.25);outline-offset:4px}
+.content{padding:2rem}
+.generator{margin-top:1rem}
+#generate{background:var(--brand);color:white;padding:.6rem 1rem;border-radius:8px;border:none}
+.dish-card{margin-top:1rem;padding:1rem;border-radius:8px;background:linear-gradient(90deg,#fff8ef,#fffdf9);box-shadow:0 6px 20px rgba(139,63,0,0.08)}
+.hidden{display:none}
+.wall{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+.note{background:linear-gradient(90deg,#fff4e6,#fffce8);padding:.6rem .8rem;border-radius:10px;box-shadow:0 3px 8px rgba(0,0,0,0.06)}
+@media (max-width:700px){.hero{flex-direction:column;text-align:center}.hero-right{width:240px;height:180px;margin:0 auto}}
+
+/* small accessibility hint */
+.a11y-note{font-size:.85rem;color:rgba(0,0,0,0.4);margin-left:.6rem}
+/* small confetti animation */
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:9999}
+.confetti .p{width:8px;height:8px;border-radius:2px;position:absolute;animation: confetti 1s linear forwards}
+@keyframes confetti{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(140px) rotate(720deg);opacity:0}}
+.confetti .p{background:linear-gradient(90deg,var(--accent),var(--rose))} 
+
+/* parallax light */
+#parallax-light{position:fixed;pointer-events:none;inset:0;z-index:-1;background:radial-gradient(800px 400px at 10% 20%, rgba(255,230,240,0.9), rgba(255,255,255,0) 30%), radial-gradient(600px 300px at 80% 60%, rgba(255,200,230,0.6), rgba(255,255,255,0) 30%);opacity:0.9;transition:transform .12s linear}
+
+/* canvas heart layer */
+#heart-canvas{position:fixed;inset:0;pointer-events:none;z-index:1}
+
+/* mode toggle */
+#toggle-mode{font-size:.9rem;padding:.35rem .5rem}
+#toggle-mode[aria-pressed="true"]{background:linear-gradient(90deg,var(--rose),var(--accent));color:white;border-color:transparent}
+
+
+
+
+
+
+/* subtle button hover */
+button:hover, .btn:hover{transform:translateY(-2px);transition:transform .15s ease}
+
+/* recipes page tweaks */
+.tips{margin-top:1rem;background:rgba(255,255,255,0.8);padding:1rem;border-radius:8px}
+.extras{margin-top:1rem}
+
+/* gratitude wall */
+#gratitude-form{display:flex;gap:.5rem;margin-top:1rem}
+#gratitude-form input{flex:1;padding:.6rem;border-radius:8px;border:1px solid #f0d9c0}
+#gratitude-form button{padding:.6rem 1rem;border-radius:8px;background:var(--accent);color:white;border:none}
+
+/* quiz */
+.quiz-btn{margin:.4rem;padding:.4rem .6rem;border-radius:8px;border:1px solid transparent;background:#fffef8}
+.quiz-btn:hover{background:#fff4e6}

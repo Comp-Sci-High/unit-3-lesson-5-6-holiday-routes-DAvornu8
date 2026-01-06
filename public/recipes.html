@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sweet Date Night Ideas 🍓</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="heart-container" class="hearts" aria-hidden="true"></div>
+  <header class="site-header">
+    <h1 class="logo">Date Night Ideas</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/recipes" class="active">Date Night Ideas</a>
+      <a href="/gratitude">Love Notes</a>
+    </nav>
+    <div class="site-controls" role="group" aria-label="Site controls">
+      <button id="toggle-hearts" aria-pressed="true" title="Toggle heart rain">💞</button>
+      <button id="toggle-sound" aria-pressed="true" title="Toggle sound">🔔</button>
+      <div id="love-meter" aria-live="polite" title="Love meter"><span id="love-count">0</span> ❤️</div>
+    </div>
+
+
+
+
+
+  </header>
+
+  <main class="content">
+    <h2>Find a sweet idea</h2>
+    <p>Click the button to generate a dessert or cozy idea for a sweet evening.</p>
+
+    <div class="generator">
+      <button id="generate">Sweet Surprise!</button>
+      <img src="assets/heart.svg" alt="heart" class="decor-heart" aria-hidden="true" data-parallax="0.02">
+      <div id="dish" class="dish-card hidden"></div>
+    </div>
+
+    <section class="tips">
+      <h3>Cooking Tip</h3>
+      <p id="tip">Tip will appear here when you generate a dish.</p>
+    </section>
+
+    <section class="extras">
+      <h3>Warm up the table</h3>
+      <p>Try adding roasted root vegetables with maple glaze for a sweet balance.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
